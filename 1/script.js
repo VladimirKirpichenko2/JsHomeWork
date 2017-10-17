@@ -30,7 +30,7 @@ console.log(info.name);
 var customArray;
 customArray = [12, 13, 14];
 console.log(customArray);
-customArray = [0];
+customArray = [0]; // перезаписать значение массива на 0 это означает прировнять весь массив к 0, то есть customArray = 0
 console.log(customArray);
 
 // Task 5:
