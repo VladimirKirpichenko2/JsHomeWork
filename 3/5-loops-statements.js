@@ -19,6 +19,7 @@ for (i = 1; i <= 100; i++) {
             console.log("Fizz");
           }
     } else if (!(i % 5)) {
+        // you can save i % 5 in variable and the use it in 2 places
         console.log("Buzz");
     } else {
         console.log(i);
@@ -49,7 +50,8 @@ for (i = 1; i <= 100; i++) {
 // console.log(grComDiv(21, 56), grComDiv(12, 48));
 
 function grComDiv (x, y) {
-
+// you should fist declare div as a variable with var
+// var div;
     for (i = 2; i <= x; i++) {
         if (!( x % i) && (!( y % i))) {
             div = i;
