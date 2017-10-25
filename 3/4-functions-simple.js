@@ -67,6 +67,7 @@ function isOdd (x) {
 function oddRange (x, y) {
     for (var i = x; i <= y; i++) {
         if (!!(i % 2)) {
+            // you can and should use here function isOdd
             console.log (i);
         }
     }
