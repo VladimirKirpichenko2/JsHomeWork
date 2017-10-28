@@ -53,6 +53,7 @@ var obj = {
 
 function removeClass(obj, cls) {
     arr = obj.className.split(' ');
+    // лучше делать проверку через !== -1
     while (arr.indexOf(cls) > -1) {
         arr.splice(arr.indexOf(cls), 1);
     }
@@ -70,6 +71,7 @@ function numbers() {
         sum = 0,
         arr = [];
 
+    // лучше реализовать этот алгоритм через do while
     pr = prompt('Enter your numbers:');
 
     while ((!isNaN(+pr) && pr !== '' && pr !== null  ) ) {
