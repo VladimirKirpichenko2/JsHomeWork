@@ -21,9 +21,7 @@ var labels = document.getElementsByTagName('label');
 
 var lastDiv = labels[labels.length -1].parentElement;
 
-var cloned = lastDiv.cloneNode();
-
-cloned.innerHTML = lastDiv.innerHTML;
+var cloned = lastDiv.cloneNode(1);
 
 cloned.getElementsByTagName('label')[0].innerText = 'Age';
 
