@@ -152,7 +152,8 @@ function func (e) {
         var defaultColor = target.style.backgroundColor;
         target.style.backgroundColor = 'yellow';
 
-
+        // добавлять обработчик события на mouseout лучше извне mouseover
+        // а так у теб полуается добавляеться куча обработчиком событий на mouseout каждый раз когда ты делаешь mouseover
         document.addEventListener('mouseout', func1);
 
         function func1() {
@@ -163,6 +164,23 @@ function func (e) {
     }
 
 }
+
+// то есть лучше сделать вот так вот:
+
+/* 
+
+document.addEventListener('mouseover', func);
+document.addEventListener('mouseout', func2);
+
+function func (e) {
+        // ..
+}
+function func2 (e) {
+        // ..
+}
+
+
+*/
 
 
 // Variant 2:
@@ -177,6 +195,7 @@ for (var i = 0; i < strong.length; i++) {
         var defaultColor = this.style.backgroundColor;
         this.style.backgroundColor = 'yellow';
         this.addEventListener('mouseout', func4);
+            //тут тоже самое что и в примере више
 
         function func4() {
             this.style.backgroundColor = defaultColor;
@@ -502,6 +521,7 @@ function colorMe(e) {
 
     if (e.target.tagName === 'TD') {
         var cell = e.target;
+            // тут же есть еще this который и будет этим e.target
     } else return;
 
     var countCells = countMarked(getCellCoord(cell));
