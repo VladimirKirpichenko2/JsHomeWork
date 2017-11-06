@@ -144,26 +144,25 @@ function removecolor() {
 //Variant 1:
 
 document.addEventListener('mouseover', func);
+document.addEventListener('mouseout', func1);
 
-function func (e) {
+function func(e) {
     var target = e.target;
 
     if (target.tagName === 'STRONG') {
-        var defaultColor = target.style.backgroundColor;
         target.style.backgroundColor = 'yellow';
-
-
-        document.addEventListener('mouseout', func1);
-
-        function func1() {
-            target.style.backgroundColor = defaultColor;
-        }
-
-
     }
-
 }
 
+function func1(e) {
+    var target = e.target;
+
+    if (target.tagName === 'STRONG') {
+        target.style.backgroundColor = 'yellow';
+    }
+
+    target.style.backgroundColor = '';
+}
 
 // Variant 2:
 
@@ -171,19 +170,18 @@ var strong = document.querySelectorAll('strong');
 
 for (var i = 0; i < strong.length; i++) {
     strong[i].addEventListener('mouseover', func3);
-
-    function func3() {
-
-        var defaultColor = this.style.backgroundColor;
-        this.style.backgroundColor = 'yellow';
-        this.addEventListener('mouseout', func4);
-
-        function func4() {
-            this.style.backgroundColor = defaultColor;
-        }
-
-    }
+    strong[i].addEventListener('mouseout', func4);
 }
+
+function func3() {
+    this.style.backgroundColor = 'yellow';
+}
+
+function func4() {
+    this.style.backgroundColor = "";
+}
+
+
 
 
 // 4 task
